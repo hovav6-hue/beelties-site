@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הבילתיס' — מסיבת רוק</title>
+<meta name="description" content="הבילתיס' — להקת רוק חיה. המנוני שנות ה-90 במופע חי ומרים. הופעות, נגנים, וידאו ותמונות.">
+<meta property="og:title" content="הבילתיס' — מסיבת רוק">
+<meta property="og:description" content="המנוני רוק אגדיים במופע חי, מרים, ובאנרגיות שיא.">
+<meta property="og:image" content="images/hero.jpg">
+<meta name="theme-color" content="#15120F">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Rubik:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">דלג לתוכן</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__mark" href="#top"><img src="images/logo.png" alt="הבילתיס'"></a>
+    <nav class="nav__links" aria-label="ניווט ראשי">
+      <a href="#about">אודות</a>
+      <a href="#members">נגנים</a>
+      <a href="#shows">הופעות</a>
+      <a href="#videos">וידאו</a>
+      <a href="#gallery">גלריה</a>
+    </nav>
+    <a class="nav__cta" href="#contact">להזמנת הופעה</a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile">
+      <span></span><span></span><span class="sr">תפריט</span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="navMobile" hidden>
+  <nav aria-label="ניווט נייד">
+    <a href="#about"><i>01</i>אודות</a>
+    <a href="#members"><i>02</i>נגנים</a>
+    <a href="#shows"><i>03</i>הופעות</a>
+    <a href="#videos"><i>04</i>וידאו</a>
+    <a href="#gallery"><i>05</i>גלריה</a>
+    <a href="#contact"><i>06</i>להזמנת הופעה</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- ===== הירו ===== -->
+  <section class="hero" id="top">
+    <div class="hero__media duo duo--ink">
+      <picture>
+        <source id="heroSrcMobile" media="(max-width:700px)" srcset="">
+        <img id="heroImg" src="" alt="">
+      </picture>
+    </div>
+    <div class="hero__body">
+      <img class="hero__logo" id="heroLogo" src="" alt="">
+      <h1 class="hero__tag" id="heroTag"></h1>
+      <div class="hero__acts" id="heroActs"></div>
+    </div>
+    <a class="hero__next" id="heroNext" href="#shows" hidden></a>
+    <div class="hero__cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ===== רצועת ברק ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" id="tickerTrack"></div>
+  </div>
+
+  <!-- ===== אודות ===== -->
+  <section class="band band--cream" id="about">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="head__num">01</span>
+        <h2 class="head__title">אודות</h2>
+        <span class="head__rule"></span>
+      </div>
+      <p class="lead reveal" id="aboutLead"></p>
+      <div class="about__cols">
+        <div class="about__body reveal" id="aboutBody"></div>
+        <ul class="points reveal" id="aboutPoints"></ul>
+      </div>
+      <p class="about__area reveal" id="aboutArea"></p>
+    </div>
+  </section>
+
+  <!-- ===== נגנים ===== -->
+  <section class="band band--ink" id="members">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="head__num">02</span>
+        <h2 class="head__title">על הבמה</h2>
+        <span class="head__rule"></span>
+      </div>
+      <ul class="members" id="membersGrid"></ul>
+    </div>
+  </section>
+
+  <!-- ===== הופעות ===== -->
+  <section class="band band--mustard" id="shows">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="head__num">03</span>
+        <h2 class="head__title">הופעות</h2>
+        <span class="head__rule"></span>
+      </div>
+      <div class="shows" id="showsUpcoming"></div>
+      <div class="shows__past" id="showsPastWrap" hidden>
+        <button class="shows__toggle" id="pastToggle" aria-expanded="false" aria-controls="showsPast">
+          <span>הופעות קודמות</span>
+        </button>
+        <div class="shows" id="showsPast" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== וידאו ===== -->
+  <section class="band band--ink" id="videos">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="head__num">04</span>
+        <h2 class="head__title">וידאו</h2>
+        <span class="head__rule"></span>
+      </div>
+      <ul class="videos" id="videosGrid"></ul>
+    </div>
+  </section>
+
+  <!-- ===== גלריה ===== -->
+  <section class="band band--ink band--tight" id="gallery">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="head__num">05</span>
+        <h2 class="head__title">גלריה</h2>
+        <span class="head__rule"></span>
+      </div>
+      <div class="gallery" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== קשר ===== -->
+  <section class="band band--red" id="contact">
+    <div class="wrap contact">
+      <p class="contact__note reveal" id="contactNote"></p>
+      <a class="contact__mail reveal" id="contactMail" href="#"></a>
+      <a class="contact__phone reveal" id="contactPhone" href="#"></a>
+      <ul class="contact__socials reveal" id="contactSocials"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <img class="foot__logo" src="images/logo.png" alt="">
+  <span id="footYear"></span>
+</footer>
+
+<div class="lb" id="lb" hidden>
+  <button class="lb__close" id="lbClose" aria-label="סגירה"></button>
+  <button class="lb__nav lb__nav--prev" id="lbPrev" aria-label="הקודם"></button>
+  <button class="lb__nav lb__nav--next" id="lbNext" aria-label="הבא"></button>
+  <figure class="lb__stage" id="lbStage"></figure>
+  <figcaption class="lb__cap" id="lbCap"></figcaption>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
