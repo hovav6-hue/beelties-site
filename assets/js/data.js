@@ -73,22 +73,23 @@ const BILTIS = {
 
   /* ---------- גלריה ----------
      src   = התמונה המלאה שנפתחת בלייטבוקס
-     thumb = גרסה קלה שמוצגת ברשת. אם אין thumb, src משמש לשניהם.   */
+     thumb = גרסה קלה שמוצגת ברשת
+     w/h   = מידות התמונה הממוזערת, כדי שהרשת לא תקפוץ בזמן טעינה   */
   gallery: [
-    { src: "images/gallery-01.jpg", thumb: "images/gallery-01-t.jpg", caption: "" },
-    { src: "images/gallery-02.jpg", thumb: "images/gallery-02-t.jpg", caption: "" },
-    { src: "images/gallery-03.jpg", thumb: "images/gallery-03-t.jpg", caption: "" },
-    { src: "images/gallery-04.jpg", thumb: "images/gallery-04-t.jpg", caption: "" },
-    { src: "images/gallery-05.jpg", thumb: "images/gallery-05-t.jpg", caption: "" },
-    { src: "images/gallery-06.jpg", thumb: "images/gallery-06-t.jpg", caption: "" },
-    { src: "images/gallery-07.jpg", thumb: "images/gallery-07-t.jpg", caption: "" },
-    { src: "images/gallery-08.jpg", thumb: "images/gallery-08-t.jpg", caption: "" },
-    { src: "images/gallery-09.jpg", thumb: "images/gallery-09-t.jpg", caption: "" },
-    { src: "images/gallery-10.jpg", thumb: "images/gallery-10-t.jpg", caption: "" },
-    { src: "images/gallery-11.jpg", thumb: "images/gallery-11-t.jpg", caption: "" },
-    { src: "images/gallery-12.jpg", thumb: "images/gallery-12-t.jpg", caption: "" },
-    { src: "images/gallery-13.jpg", thumb: "images/gallery-13-t.jpg", caption: "" },
-    { src: "images/gallery-14.jpg", thumb: "images/gallery-14-t.jpg", caption: "" }
+    { src: "images/gallery-01.jpg", thumb: "images/gallery-01-t.jpg", w: 741, h: 741, caption: "" },
+    { src: "images/gallery-02.jpg", thumb: "images/gallery-02-t.jpg", w: 760, h: 570, caption: "" },
+    { src: "images/gallery-03.jpg", thumb: "images/gallery-03-t.jpg", w: 760, h: 1013, caption: "" },
+    { src: "images/gallery-04.jpg", thumb: "images/gallery-04-t.jpg", w: 760, h: 428, caption: "" },
+    { src: "images/gallery-05.jpg", thumb: "images/gallery-05-t.jpg", w: 760, h: 570, caption: "" },
+    { src: "images/gallery-06.jpg", thumb: "images/gallery-06-t.jpg", w: 760, h: 1013, caption: "" },
+    { src: "images/gallery-07.jpg", thumb: "images/gallery-07-t.jpg", w: 760, h: 1013, caption: "" },
+    { src: "images/gallery-08.jpg", thumb: "images/gallery-08-t.jpg", w: 760, h: 428, caption: "" },
+    { src: "images/gallery-09.jpg", thumb: "images/gallery-09-t.jpg", w: 760, h: 1013, caption: "" },
+    { src: "images/gallery-10.jpg", thumb: "images/gallery-10-t.jpg", w: 760, h: 570, caption: "" },
+    { src: "images/gallery-11.jpg", thumb: "images/gallery-11-t.jpg", w: 760, h: 1013, caption: "" },
+    { src: "images/gallery-12.jpg", thumb: "images/gallery-12-t.jpg", w: 760, h: 1009, caption: "" },
+    { src: "images/gallery-13.jpg", thumb: "images/gallery-13-t.jpg", w: 760, h: 1013, caption: "" },
+    { src: "images/gallery-14.jpg", thumb: "images/gallery-14-t.jpg", w: 760, h: 1009, caption: "" },
   ],
 
   /* ---------- קשר ---------- */

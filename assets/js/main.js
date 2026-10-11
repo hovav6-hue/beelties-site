@@ -14,19 +14,28 @@
     });
   };
 
+  /* <picture> עם WebP ונפילה חזרה ל-JPEG/PNG לדפדפנים ישנים */
+  function pic(src, attrs) {
+    var webp = String(src).replace(/\.(jpe?g|png)$/i, ".webp");
+    return "<picture><source srcset=\"" + esc(webp) + "\" type=\"image/webp\">" +
+             "<img src=\"" + esc(src) + "\" " + (attrs || "") + "></picture>";
+  }
+
   var MONTHS = ["ינו","פבר","מרץ","אפר","מאי","יונ","יול","אוג","ספט","אוק","נוב","דצמ"];
   function parseDate(s) { var p = String(s).split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
 
   /* ---------- כללי ---------- */
-  var heroSrcMobile = $("#heroSrcMobile");
-  if (heroSrcMobile) heroSrcMobile.srcset = D.heroMobile || D.hero;
-  var heroImg = $("#heroImg");
-  heroImg.src = D.hero;
-  heroImg.alt = D.bandName + " בהופעה";
-
-  var heroLogo = $("#heroLogo");
-  heroLogo.src = D.logo;
-  heroLogo.alt = D.bandName;
+  var mob  = D.heroMobile || D.hero;
+  var wide = D.hero;
+  var w = function (p) { return String(p).replace(/\.(jpe?g|png)$/i, ".webp"); };
+  $("#heroMedia").innerHTML =
+    "<picture>" +
+      '<source media="(max-width:700px)" type="image/webp" srcset="' + esc(w(mob)) + '">' +
+      '<source media="(max-width:700px)" srcset="' + esc(mob) + '">' +
+      '<source type="image/webp" srcset="' + esc(w(wide)) + '">' +
+      '<img id="heroImg" src="' + esc(wide) + '" alt="' + esc(D.bandName) +
+        ' בהופעה" fetchpriority="high">' +
+    "</picture>";
 
   $("#heroTag").textContent    = D.tagline;
   $("#footYear").textContent   = new Date().getFullYear();
@@ -52,7 +61,7 @@
   $("#membersGrid").innerHTML = D.members.map(function (m, i) {
     return '<li class="member" style="--d:' + (i * 0.06).toFixed(2) + 's">' +
              '<div class="member__shot duo duo--mustard">' +
-               '<img src="' + esc(m.image) + '" alt="' + esc(m.name) + '" loading="lazy">' +
+               pic(m.image, 'alt="' + esc(m.name) + '" loading="lazy" decoding="async" width="700" height="933"') +
              "</div>" +
              '<h3 class="member__name">' + esc(m.name) + "</h3>" +
              '<span class="member__role">' + esc(m.role) + "</span>" +
@@ -131,7 +140,9 @@
              '<button class="video__btn" data-yt="' + esc(v.youtube) +
                '" data-aspect="' + esc(v.aspect || "16/9") +
                '" data-title="' + esc(v.title) + '">' +
-               '<span class="duo duo--ink"><img src="' + esc(v.poster) + '" alt="" loading="lazy"></span>' +
+               '<span class="duo duo--ink">' +
+                 pic(v.poster, 'alt="" loading="lazy" decoding="async" width="1200" height="675"') +
+               "</span>" +
                '<span class="video__play" aria-hidden="true"></span>' +
                '<span class="sr">נגן: ' + esc(v.title) + "</span>" +
              "</button>" +
@@ -146,8 +157,10 @@
   /* ---------- גלריה ---------- */
   $("#galleryGrid").innerHTML = D.gallery.map(function (g, i) {
     return '<button class="shot" data-i="' + i + '" style="--d:' + ((i % 3) * 0.08).toFixed(2) + 's">' +
-             '<img src="' + esc(g.thumb || g.src) + '" alt="' +
-               esc(g.caption || (D.bandName + " בהופעה")) + '" loading="lazy" decoding="async">' +
+             pic(g.thumb || g.src,
+                 'alt="' + esc(g.caption || (D.bandName + " בהופעה")) +
+                 '" loading="lazy" decoding="async"' +
+                 (g.w && g.h ? ' width="' + g.w + '" height="' + g.h + '"' : "")) +
            "</button>";
   }).join("");
 
@@ -228,7 +241,7 @@
   function showImage(i) {
     var list = D.gallery;
     idx = (i + list.length) % list.length;
-    lbStage.innerHTML = '<img src="' + esc(list[idx].src) + '" alt="' + esc(list[idx].caption || "") + '">';
+    lbStage.innerHTML = pic(list[idx].src, 'alt="' + esc(list[idx].caption || "") + '"');
     lbCap.textContent = list[idx].caption || "";
     lbPrev.hidden = lbNext.hidden = list.length < 2;
   }
